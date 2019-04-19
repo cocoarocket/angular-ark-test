@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AbonentsComponent } from './components/abonents/abonents.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: 'abonents', component: AbonentsComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
