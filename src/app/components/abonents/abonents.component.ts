@@ -5,11 +5,15 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './abonents.component.html',
   styleUrls: ['./abonents.component.sass']
 })
+
 export class AbonentsComponent implements OnInit {
+  public currentLink: string;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor() {
+    this.currentLink = 'true';
   }
 
+  ngOnInit() {
+
+  }
 }
