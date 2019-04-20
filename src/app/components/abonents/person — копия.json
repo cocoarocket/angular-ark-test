@@ -1,3 +1,7 @@
+export const CHARACTERS: any[] = [
+  
+]
+
 {
 	"actionSentRaw": "api.mobile.sqlService",
 	"code": 1,
@@ -5,57 +9,23 @@
 	"description": "Request Ok",
 	"data": {
 		"metaData": [
-			{
-				"name": "CARD"
-			},
-			{
-				"name": "LASTNAME"
-			},
-			{
-				"name": "FIRSTNAME"
-			},
-			{
-				"name": "PATRONYMIC"
-			},
-			{
-				"name": "IDPERSON"
-			},
-			{
-				"name": "STATUSNAME"
-			},
-			{
-				"name": "ACC1NUM"
-			},
-			{
-				"name": "CARDTEMPLNAME"
-			},
-			{
-				"name": "ORGNAMESHORT"
-			},
-			{
-				"name": "PERSONTYPENAME"
-			},
-			{
-				"name": "CURRNAME"
-			},
-			{
-				"name": "IDCARD"
-			},
-			{
-				"name": "BIRTHDATE"
-			},
-			{
-				"name": "DOCSERIES"
-			},
-			{
-				"name": "DOCNUM"
-			},
-			{
-				"name": "IDTASKAUTHSTATUS"
-			},
-			{
-				"name": "DOCTYPENAME"
-			}
+			{ "name": "CARD" },
+			{ "name": "LASTNAME" },
+			{ "name": "FIRSTNAME" },
+			{ "name": "PATRONYMIC" },
+			{ "name": "IDPERSON" },
+			{ "name": "STATUSNAME" },
+			{ "name": "ACC1NUM" },
+			{ "name": "CARDTEMPLNAME" },
+			{ "name": "ORGNAMESHORT" },
+			{ "name": "PERSONTYPENAME" },
+			{ "name": "CURRNAME" },
+			{ "name": "IDCARD" },
+			{ "name": "BIRTHDATE" },
+			{ "name": "DOCSERIES" },
+			{ "name": "DOCNUM" },
+			{ "name": "IDTASKAUTHSTATUS" },
+			{ "name": "DOCTYPENAME" }
 		],
 		"rows": [
 			[

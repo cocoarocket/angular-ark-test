@@ -127,5 +127,19 @@
     "use-pipe-transform-interface": true,
     "component-class-suffix": true,
     "directive-class-suffix": true
+  },
+
+  "rules": {
+    "quotemark": [false],
+    "indent": [true, "spaces", 2],
+    "interface-name": false,
+    "ordered-imports": false,
+    "object-literal-sort-keys": false,
+    "no-consecutive-blank-lines": false,
+    "max-line-length": false,
+    "import-spacing": false,
+    "object-literal-shorthand": false,
+    "arrow-parens": false,
+    "no-console": false
   }
 }

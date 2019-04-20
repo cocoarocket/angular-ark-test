@@ -1,0 +1,38 @@
+table
+  th
+    font-size: 10px
+
+  border: 1px solid #212529
+  font-size: 12px
+  border-collapse: unset !important
+  border-radius: 10px 10px 10px 10px
+
+  tbody
+    .center
+      text-align: center
+    .left
+      text-align: left
+
+    tr
+      transition: all 100ms ease-out 20ms
+      -webkit-transition: all 100ms ease-out 20ms
+      -moz-transition: all 100ms ease-out 20ms
+
+    tr:hover
+      background-color: rgba(255, 184, 220, 0.52) !important
+      cursor: pointer
+
+  thead > tr:last-child > th:first-child
+    border-radius: 10px 0px 0px 0px
+
+  thead > tr:last-child > th:last-child
+    border-radius: 0px 10px 0px 0px
+
+  tbody > tr:last-child > td:first-child
+    border-radius: 0px 0px 0px 10px
+
+  tbody > tr:last-child > td:last-child
+    border-radius: 0px 0px 10px 0px
+
+.table th, .table td
+  vertical-align: baseline

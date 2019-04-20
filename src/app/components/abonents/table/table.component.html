@@ -1,0 +1,132 @@
+<table cdk-table [dataSource]="dataSource">
+  <ng-container cdkColumnDef="CARD">
+    <th cdk-header-cell *cdkHeaderCellDef>CARD</th>
+    <td cdk-cell *cdlCellDef="let row">{{ row.CARD }}</td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="LASTNAME">
+    <th cdk-header-cell *cdkHeaderCellDef>LASTNAME</th>
+    <td cdk-cell *cdlCellDef="let row">{{ row.LASTNAME }}</td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="FIRSTNAME">
+    <th cdk-header-cell *cdkHeaderCellDef>FIRSTNAME</th>
+    <td cdk-cell *cdlCellDef="let row">{{ row.FIRSTNAME }}</td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="PATRONYMIC">
+    <th cdk-header-cell *cdkHeaderCellDef>PATRONYMIC</th>
+    <td cdk-cell *cdlCellDef="let row">{{ row.PATRONYMIC }}</td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="IDPERSON">
+    <th cdk-header-cell *cdkHeaderCellDef>IDPERSON</th>
+    <td cdk-cell *cdlCellDef="let row">{{ row.IDPERSON }}</td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="STATUSNAME">
+    <th cdk-header-cell *cdkHeaderCellDef>STATUSNAME</th>
+    <td cdk-cell *cdlCellDef="let row">{{ row.STATUSNAME }}</td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="ACC1NUM">
+    <th cdk-header-cell *cdkHeaderCellDef>ACC1NUM</th>
+    <td cdk-cell *cdlCellDef="let row">{{ row.ACC1NUM }}</td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="CARDTEMPLNAME">
+    <th cdk-header-cell *cdkHeaderCellDef>CARDTEMPLNAME</th>
+    <td cdk-cell *cdlCellDef="let row">{{ row.CARDTEMPLNAME }}</td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="ORGNAMESHORT">
+    <th cdk-header-cell *cdkHeaderCellDef>ORGNAMESHORT</th>
+    <td cdk-cell *cdlCellDef="let row">{{ row.ORGNAMESHORT }}</td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="PERSONTYPENAME">
+    <th cdk-header-cell *cdkHeaderCellDef>PERSONTYPENAME</th>
+    <td cdk-cell *cdlCellDef="let row">{{ row.PERSONTYPENAME }}</td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="CURRNAME">
+    <th cdk-header-cell *cdkHeaderCellDef>CURRNAME</th>
+    <td cdk-cell *cdlCellDef="let row">{{ row.CURRNAME }}</td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="IDCARD">
+    <th cdk-header-cell *cdkHeaderCellDef>IDCARD</th>
+    <td cdk-cell *cdlCellDef="let row">{{ row.IDCARD }}</td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="BIRTHDATE">
+    <th cdk-header-cell *cdkHeaderCellDef>BIRTHDATE</th>
+    <td cdk-cell *cdlCellDef="let row">{{ row.BIRTHDATE }}</td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="DOCSERIES">
+    <th cdk-header-cell *cdkHeaderCellDef>DOCSERIES</th>
+    <td cdk-cell *cdlCellDef="let row">{{ row.DOCSERIES }}</td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="DOCNUM">
+    <th cdk-header-cell *cdkHeaderCellDef>DOCNUM</th>
+    <td cdk-cell *cdlCellDef="let row">{{ row.DOCNUM }}</td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="IDTASKAUTHSTATUS">
+    <th cdk-header-cell *cdkHeaderCellDef>IDTASKAUTHSTATUS</th>
+    <td cdk-cell *cdlCellDef="let row">{{ row.IDTASKAUTHSTATUS }}</td>
+  </ng-container>
+
+  <ng-container cdkColumnDef="DOCTYPENAME">
+    <th cdk-header-cell *cdkHeaderCellDef>DOCTYPENAME</th>
+    <td cdk-cell *cdlCellDef="let row">{{ row.DOCTYPENAME }}</td>
+  </ng-container>
+
+  <tr cdk-header-row *cdkHeaderRowDef="columnNames"></tr>
+  <tr cdk-row *cdkRowDef="let row; columns: columnNames"></tr>
+</table>
+
+<!--
+
+CARD
+LASTNAME
+FIRSTNAME
+PATRONYMIC
+IDPERSON
+STATUSNAME
+ACC1NUM
+CARDTEMPLNAME
+ORGNAMESHORT
+PERSONTYPENAME
+CURRNAME
+IDCARD
+BIRTHDATE
+DOCSERIES
+DOCNUM
+IDTASKAUTHSTATUS
+DOCTYPENAME
+
+-->
+
+
+<!--<table class="table table-hover">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col" *ngFor="let element of columns">
+      {{ element.name }}
+    </th>
+    <th></th>
+  </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let row of rows; let i = index" id="{{ 'content-row-' + i }}">
+      <td *ngFor="let td of row; let iCell = index" [className]="iCell == 1 || iCell == 2 || iCell == 3 ? 'center' : 'left'">{{ td }}</td>
+      <td><button class="btn btn-primary btn-sm" (click)="deleteContentRow(i)">Delete</button></td>
+    </tr>
+  </tbody>
+</table>-->
+
+
