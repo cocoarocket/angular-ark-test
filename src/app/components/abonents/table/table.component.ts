@@ -59,7 +59,7 @@ export class TableComponent implements OnInit {
     this.router.navigate(['/abonents/table', id]);
   }
 
-  private openedAbonent() {
+  public openedAbonent() {
     return this.abonent_opened;
   }
 

@@ -11,7 +11,7 @@ export class AbonentComponent implements OnInit {
   @Input() abonent: Object;
   @Input() id: number;
 
-  private columns = columns;
+  public columns = columns;
 
   constructor() { }
 

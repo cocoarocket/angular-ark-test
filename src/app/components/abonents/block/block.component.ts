@@ -9,7 +9,7 @@ import { PersonRawConverter } from "../table/data/converters";
 export class BlockComponent implements OnInit {
 
   private columnNames = [];
-  private abonents = [];
+  public abonents = [];
 
   public tmpConverter = new PersonRawConverter();
 
