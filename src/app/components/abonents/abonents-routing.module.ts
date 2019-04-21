@@ -9,7 +9,6 @@ export const routes: Routes = [
   { path: '', redirectTo: 'abonents', pathMatch: 'full' },
   { path: 'abonents', component: AbonentsComponent,
     children: [
-      { path: '', redirectTo: 'table', pathMatch: 'full' },
       { path: 'main',  component: MainComponent },
       { path: 'block',  component: BlockComponent },
       { path: 'table', component: TableComponent,
