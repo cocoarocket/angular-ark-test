@@ -1,4 +1,4 @@
-<table class="table table-hover">
+<table class="table table-hover" *ngIf="openedAbonent()">
   <thead class="thead-dark">
   <tr>
     <th scope="col" *ngFor="let element of displayedColumns">
@@ -9,26 +9,8 @@
   </thead>
 
   <tbody>
-    <tr *ngFor="let row of dataSource; let i = index" id="{{ 'content-row-' + i }}">
-
-      <td class="left">{{ row["CARD"] }}</td>
-      <td class="center">{{ row["LASTNAME"] }}</td>
-      <td class="center">{{ row["FIRSTNAME"] }}</td>
-      <td class="center">{{ row["PATRONYMIC"] }}</td>
-      <td class="left">{{ row["IDPERSON"] }}</td>
-      <td class="left">{{ row["STATUSNAME"] }}</td>
-      <td class="left">{{ row["ACC1NUM"] }}</td>
-      <td class="left">{{ row["CARDTEMPLNAME"] }}</td>
-      <td class="left">{{ row["ORGNAMESHORT"] }}</td>
-      <td class="left">{{ row["PERSONTYPENAME"] }}</td>
-      <td class="left">{{ row["CURRNAME"] }}</td>
-      <td class="left">{{ row["IDCARD"] }}</td>
-      <td class="left">{{ row["BIRTHDATE"] }}</td>
-      <td class="left">{{ row["DOCSERIES"] }}</td>
-      <td class="left">{{ row["DOCNUM"] }}</td>
-      <td class="left">{{ row["IDTASKAUTHSTATUS"] }}</td>
-      <td class="left">{{ row["DOCTYPENAME"] }}</td>
-
+    <tr *ngFor="let row of dataSource; let i = index" (click)="openAbonent(i)">
+      <td *ngFor="let el of displayedColumns; let iClass = index" [className]="setClass(iClass)">{{ row[el] }}</td>
       <td><button class="btn btn-primary btn-sm" (click)="deleteContentRow(i)">Delete</button></td>
     </tr>
   </tbody>
@@ -39,6 +21,9 @@
     </tr>
   </tfoot>
 </table>
+
+<!--<router-outlet [abonent]="abonent"></router-outlet>-->
+<app-abonent [abonent]="abonent" [id]="id" *ngIf="!openedAbonent()"></app-abonent>
 
 <!--<table mat-table [dataSource]="dataSource" [className]="'table table-hover'">
   <ng-container *ngFor="let name of displayedColumns; let iCell = index" [matColumnDef]="name">

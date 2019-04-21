@@ -3,6 +3,7 @@ import { AbonentsComponent} from './abonents.component';
 import { MainComponent } from './main/main.component';
 import { TableComponent } from './table/table.component';
 import { BlockComponent } from './block/block.component';
+import { AbonentComponent } from './abonent/abonent.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'abonents', pathMatch: 'full' },
@@ -10,8 +11,12 @@ export const routes: Routes = [
     children: [
       { path: '', redirectTo: 'table', pathMatch: 'full' },
       { path: 'main',  component: MainComponent },
-      { path: 'table', component: TableComponent },
-      { path: 'block', component: BlockComponent }
+      { path: 'block',  component: BlockComponent },
+      { path: 'table', component: TableComponent,
+        children: [
+          { path: ':id' , component: AbonentComponent }
+        ]
+      }
     ]
   }
 ];

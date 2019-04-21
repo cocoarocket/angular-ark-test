@@ -11,9 +11,9 @@ import { AbonentsComponent } from './components/abonents/abonents.component';
 import { TableComponent } from './components/abonents/table/table.component';
 import { BlockComponent } from './components/abonents/block/block.component';
 import { MainComponent } from './components/abonents/main/main.component';
+import { AbonentComponent } from './components/abonents/abonent/abonent.component';
 
 import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule, MatSortModule, MatTableModule } from "@angular/material";
-
 
 
 @NgModule({
@@ -23,12 +23,12 @@ import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule, MatSortMo
     HomeComponent,
     TableComponent,
     BlockComponent,
-    MainComponent
+    MainComponent,
+    AbonentComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    MatInputModule, MatPaginatorModule, MatProgressSpinnerModule, MatSortModule, MatTableModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

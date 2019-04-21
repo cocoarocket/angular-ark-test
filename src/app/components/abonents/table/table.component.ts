@@ -1,13 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-// import { animate, state, style, transition, trigger } from '@angular/animations';
-import { RawAbonentsData } from './person';
-import { ELEMENT_DATA } from './element_data';
-import { iPersons } from './persons_interface';
-import { PersonRawConverter } from './converters';
-
-import { BehaviorSubject, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { DataSource } from '@angular/cdk/table';
+import { PersonRawConverter } from './data/converters';
+import { Router, Event, NavigationStart, NavigationEnd, NavigationError } from '@angular/router';
 
 @Component({
   selector: 'app-table',
@@ -16,25 +9,33 @@ import { DataSource } from '@angular/cdk/table';
 })
 
 export class TableComponent implements OnInit {
-
-
-  // dataSource = ELEMENT_DATA;
-  // displayedColumns: string[] = [];
-
   private displayedColumns = [];
   private dataSource = [];
   private newAttribute: any = {};
+  private abonent_opened = false;
+  private abonent: Object;
+  private id: number;
 
-  constructor() {}
+  public tmpConverter = new PersonRawConverter();
+
+  constructor(private router: Router) {
+    this.abonent_opened = false;
+
+    router.events.subscribe( (event: Event) => {
+      if (event instanceof NavigationEnd) {
+        if (event.url === '/abonents/table')
+          this.abonent_opened = true;
+        else
+          this.abonent_opened = false;
+      }
+
+      if (event instanceof NavigationError) console.log(event.error);
+    });
+  }
 
   ngOnInit() {
-    let tmpConverter = new PersonRawConverter();
-
-    this.displayedColumns = tmpConverter.displayedColumns;
-    this.dataSource = tmpConverter.namedArray;
-
-    console.log(this.dataSource);
-    console.log(this.displayedColumns);
+    this.displayedColumns = this.tmpConverter.displayedColumns;
+    this.dataSource = this.tmpConverter.namedArray;
   }
 
   private setClass(iCell) {
@@ -42,33 +43,24 @@ export class TableComponent implements OnInit {
   }
 
   private addFieldValue() {
-    let newData = {
-      ACC1NUM: "acc num",
-      BIRTHDATE: "birth date",
-      CARD: "card",
-      CARDTEMPLNAME: " card temp name",
-      CURRNAME: "cur name",
-      DOCNUM: "doc num",
-      DOCSERIES: "series",
-      DOCTYPENAME: "type",
-      FIRSTNAME: "first name",
-      IDCARD: Math.floor(Math.random() * 100) + 1,
-      IDPERSON: Math.floor(Math.random() * 100) + 1,
-      IDTASKAUTHSTATUS: Math.floor(Math.random() * 100) + 1,
-      LASTNAME: "last name",
-      ORGNAMESHORT: "org short name",
-      PATRONYMIC: "patr name",
-      PERSONTYPENAME: "person type name",
-      STATUSNAME: "status name"
-    }
-    this.dataSource.push(newData)
+    this.dataSource.push(this.tmpConverter.newData())
     this.newAttribute = {};
 
-    console.log(this.dataSource);
+    // console.log(this.dataSource);
   }
 
   private deleteContentRow(i) {
     this.dataSource.splice(i, 1);
+  }
+
+  private openAbonent(id) {
+    this.abonent = this.dataSource[id];
+    this.id = id;
+    this.router.navigate(['/abonents/table', id]);
+  }
+
+  private openedAbonent() {
+    return this.abonent_opened;
   }
 
 }

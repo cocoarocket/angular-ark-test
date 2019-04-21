@@ -8,9 +8,6 @@ export class PersonRawConverter {
   constructor() {
     this.displayedColumns = this.buildColumnNames();
     this.namedArray = this.buildNamedArray();
-
-    // console.log(this.namedArray);
-    // console.log(this.displayedColumns);
   }
 
   public buildColumnNames() {
@@ -34,5 +31,27 @@ export class PersonRawConverter {
     });
 
     return named_array;
+  }
+
+  public newData() {
+    return  {
+      ACC1NUM: "acc num",
+      BIRTHDATE: "birth date",
+      CARD: "card",
+      CARDTEMPLNAME: " card temp name",
+      CURRNAME: "cur name",
+      DOCNUM: "doc num",
+      DOCSERIES: "series",
+      DOCTYPENAME: "type",
+      FIRSTNAME: "first name",
+      IDCARD: Math.floor(Math.random() * 100) + 1,
+      IDPERSON: Math.floor(Math.random() * 100) + 1,
+      IDTASKAUTHSTATUS: Math.floor(Math.random() * 100) + 1,
+      LASTNAME: "last name",
+      ORGNAMESHORT: "org short name",
+      PATRONYMIC: "patr name",
+      PERSONTYPENAME: "person type name",
+      STATUSNAME: "status name"
+    }
   }
 }
