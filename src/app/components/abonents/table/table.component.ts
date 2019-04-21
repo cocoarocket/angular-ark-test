@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 // import { animate, state, style, transition, trigger } from '@angular/animations';
 import { RawAbonentsData } from './person';
+import { ELEMENT_DATA } from './element_data';
+import { iPersons } from './persons_interface';
+import { PersonRawConverter } from './converters';
 
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { DataSource } from '@angular/cdk/table';
 
 @Component({
   selector: 'app-table',
@@ -12,58 +16,59 @@ import { map } from 'rxjs/operators';
 })
 
 export class TableComponent implements OnInit {
-  private names = [];
-  // private named_array$ = new BehaviorSubject<any>(this.buildNamedArrays());
-  private named_array = [];
-  // public columnNames$ = new BehaviorSubject<any>(this.names);
-  public columnNames = [];
 
-  // dataSource$: Observable<any>;
-  dataSource = [];
 
-  constructor() { }
+  // dataSource = ELEMENT_DATA;
+  // displayedColumns: string[] = [];
+
+  private displayedColumns = [];
+  private dataSource = [];
+  private newAttribute: any = {};
+
+  constructor() {}
 
   ngOnInit() {
-    this.names = this.buildColumnNames();
-    this.named_array = this.buildNamedArrays();
-    this.columnNames = this.names;
-    // this.named_array$ = new BehaviorSubject<any[]>(data);
+    let tmpConverter = new PersonRawConverter();
 
-    // console.log(this.named_array);
+    this.displayedColumns = tmpConverter.displayedColumns;
+    this.dataSource = tmpConverter.namedArray;
 
-    // this.dataSource$ = this.named_array$.pipe(map(v => Object.values(v)));
-    this.dataSource = this.named_array;
+    console.log(this.dataSource);
+    console.log(this.displayedColumns);
+  }
+
+  private setClass(iCell) {
+    return iCell == 1 || iCell == 2 || iCell == 3 ? 'center' : 'left';
+  }
+
+  private addFieldValue() {
+    let newData = {
+      ACC1NUM: "acc num",
+      BIRTHDATE: "birth date",
+      CARD: "card",
+      CARDTEMPLNAME: " card temp name",
+      CURRNAME: "cur name",
+      DOCNUM: "doc num",
+      DOCSERIES: "series",
+      DOCTYPENAME: "type",
+      FIRSTNAME: "first name",
+      IDCARD: Math.floor(Math.random() * 100) + 1,
+      IDPERSON: Math.floor(Math.random() * 100) + 1,
+      IDTASKAUTHSTATUS: Math.floor(Math.random() * 100) + 1,
+      LASTNAME: "last name",
+      ORGNAMESHORT: "org short name",
+      PATRONYMIC: "patr name",
+      PERSONTYPENAME: "person type name",
+      STATUSNAME: "status name"
+    }
+    this.dataSource.push(newData)
+    this.newAttribute = {};
 
     console.log(this.dataSource);
   }
 
-  private buildColumnNames() {
-    let names = RawAbonentsData[0]["data"]["metaData"].map(el => {
-      return el.name;
-    });
-
-    return names;
-  }
-
-  private buildNamedArrays() {
-    let named_array = [];
-    let data = RawAbonentsData[0]["data"]["rows"];
-
-    data.forEach(row => {
-      let named_row = {};
-      row.forEach((element, index) => {
-        named_row[this.names[index]] = element;
-      });
-      named_array.push(named_row);
-    });
-
-    return named_array;
-  }
-
-  deleteContentRow(i) {
-    console.log(i);
-    let element = document.getElementById("content-row-" + i);
-    element.remove();
+  private deleteContentRow(i) {
+    this.dataSource.splice(i, 1);
   }
 
 }

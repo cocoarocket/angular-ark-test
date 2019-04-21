@@ -12,6 +12,8 @@ import { TableComponent } from './components/abonents/table/table.component';
 import { BlockComponent } from './components/abonents/block/block.component';
 import { MainComponent } from './components/abonents/main/main.component';
 
+import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule, MatSortModule, MatTableModule } from "@angular/material";
+
 
 
 @NgModule({
@@ -26,7 +28,7 @@ import { MainComponent } from './components/abonents/main/main.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CdkTableModule
+    MatInputModule, MatPaginatorModule, MatProgressSpinnerModule, MatSortModule, MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
