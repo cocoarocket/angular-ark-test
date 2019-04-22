@@ -1,5 +1,5 @@
-<div class="table-responsive-sm">
-  <table class="table table-hover table-responsive-sm" *ngIf="openedAbonent()">
+<table class="table table-hover table-responsive-sm" *ngIf="openedAbonent()">
+  <div class="table-content-block">
     <thead class="thead-dark">
     <tr>
       <th scope="col" *ngFor="let element of displayedColumns">
@@ -15,14 +15,14 @@
       <td><button class="btn btn-primary btn-sm" (click)="deleteContentRow(i)">Delete</button></td>
     </tr>
     </tbody>
+  </div>
 
-    <tfoot>
-    <tr>
-      <td colspan="18"><button class="btn btn-primary btn-sm" (click)="addFieldValue()">Add</button></td>
-    </tr>
-    </tfoot>
-  </table>
-</div>
+  <tfoot>
+  <tr>
+    <td colspan="18"><button class="btn btn-primary btn-sm" (click)="addFieldValue()">Add</button></td>
+  </tr>
+  </tfoot>
+</table>
 
 <!--<router-outlet [abonent]="abonent"></router-outlet>-->
 <app-abonent [abonent]="abonent" [id]="id" *ngIf="!openedAbonent()"></app-abonent>

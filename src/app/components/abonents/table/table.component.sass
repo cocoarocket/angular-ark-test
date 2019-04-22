@@ -41,16 +41,20 @@ table
   overflow: scroll
 
 @media (max-width: 1450px)
-  .table-responsive-sm
-    width: 1390px
+  .table-content-block
+    width: 1380px
+    overflow-x: scroll
+  //.table-responsive-sm
+    width: 1380px
     overflow-x: scroll
   table
     tbody
       .center,.left
         width: 100px
-        overflow: hidden
         word-wrap: anywhere
 
+    tbody, thead
+      overflow-x: scroll
 
 //@media (max-width: 1110px)
   \:host
