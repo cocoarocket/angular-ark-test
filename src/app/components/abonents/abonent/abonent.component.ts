@@ -13,6 +13,8 @@ export class AbonentComponent implements OnInit {
 
   public columns = columns;
 
+  // abonent_data: { [key: string]: string } = this.abonent;
+
   constructor() { }
 
   ngOnInit() {

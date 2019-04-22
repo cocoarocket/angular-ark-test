@@ -6,12 +6,10 @@
     </div>
 
     <div class="block-data">
-      <div class="block-data-content" *ngFor="let coumnName of columns">
-        <div class="data-name">{{ coumnName }}</div>
-        <div class="data">{{ abonent[coumnName] }}</div>
+      <div class="block-data-content" *ngFor="let data of abonent | keyvalue">
+        <div class="data-name">{{ data.key }}</div>
+        <div class="data">{{ data.value }}</div>
       </div>
-
     </div>
   </div>
-
 </div>
