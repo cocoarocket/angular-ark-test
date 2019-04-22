@@ -1,4 +1,11 @@
-# ArkBankTest
+# ART-BANK Test
+
+@autor
+* mail: cocoarocket@gmail.com
+* github: github@cocoarocket
+* name: Виталий
+* gitpages: https://cocoarocket.github.io/angular-ark-test/
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.0.
 
